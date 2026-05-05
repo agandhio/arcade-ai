@@ -16,7 +16,7 @@ export function Arcade({ currentGame, onGameChange, children, onButtonDown, onBu
   const gameOptions = Object.values(GAMES);
 
   return (
-    <main className="flex-1 flex flex-col border-4 border-[#444] bg-[#1a1a1a] relative h-full">
+    <main className="flex-1 flex flex-col border-4 border-[#444] bg-[#1a1a1a] relative h-full overflow-hidden">
       {/* Screen Reflection/Glow */}
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-white/5 to-transparent z-10" />
       
@@ -37,21 +37,23 @@ export function Arcade({ currentGame, onGameChange, children, onButtonDown, onBu
         ))}
       </nav>
 
-      {/* Main Screen Viewport */}
-      <div className="flex-1 bg-black m-2 md:m-6 border-4 border-[#222] shadow-[inset_0_0_40px_rgba(74,246,38,0.15)] relative flex items-center justify-center overflow-hidden min-h-[300px] z-20">
-        {/* Grid Overlay */}
-        <div 
-          className="absolute inset-0 opacity-10 pointer-events-none z-10" 
-          style={{
-            backgroundImage: 'linear-gradient(#4af626 1px, transparent 1px), linear-gradient(90deg, #4af626 1px, transparent 1px)',
-            backgroundSize: '20px 20px'
-          }} 
-        />
-        
-        {/* CRT Scanline overlay from old arcade */}
-        <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%] z-20" />
+      {/* Main Screen Viewport Area */}
+      <div className="flex-1 p-2 md:p-6 flex items-center justify-center overflow-hidden z-20 min-h-0">
+        <div className="w-full max-h-full aspect-[4/3] sm:aspect-video bg-black border-4 border-[#222] shadow-[inset_0_0_40px_rgba(74,246,38,0.15)] relative flex items-center justify-center overflow-hidden">
+          {/* Grid Overlay */}
+          <div 
+            className="absolute inset-0 opacity-10 pointer-events-none z-10" 
+            style={{
+              backgroundImage: 'linear-gradient(#4af626 1px, transparent 1px), linear-gradient(90deg, #4af626 1px, transparent 1px)',
+              backgroundSize: '20px 20px'
+            }} 
+          />
+          
+          {/* CRT Scanline overlay */}
+          <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%] z-20" />
 
-        {children}
+          {children}
+        </div>
       </div>
 
       {/* Physical Controls Area */}

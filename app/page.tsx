@@ -38,15 +38,15 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row min-h-screen w-full bg-[#0d0d0d] font-mono p-4 gap-4 overflow-hidden relative">
+    <div className="flex flex-col lg:flex-row min-h-[100dvh] lg:h-screen w-full bg-[#0d0d0d] font-mono lg:p-4 lg:gap-4 lg:overflow-hidden relative">
       
       {/* Terminal Panel - Mobile bottom, Desktop left */}
-      <div className="order-2 lg:order-1 w-full lg:w-[360px] lg:flex-none flex flex-col gap-4">
+      <div className="order-2 lg:order-1 w-full lg:w-[360px] lg:flex-none flex flex-col p-4 lg:p-0 gap-4 min-h-[400px] lg:h-full lg:min-h-0">
         <Terminal currentGame={GAMES[currentGameId]} />
       </div>
 
       {/* Arcade Panel - Mobile top, Desktop right */}
-      <div className="order-1 lg:order-2 flex-1 min-h-[500px] lg:h-auto flex flex-col pb-4 lg:pb-0">
+      <div className="order-1 lg:order-2 w-full flex-1 flex flex-col p-2 lg:p-0 min-h-[600px] lg:h-full lg:min-h-0">
         <Arcade 
           currentGame={GAMES[currentGameId]} 
           onGameChange={setCurrentGameId}

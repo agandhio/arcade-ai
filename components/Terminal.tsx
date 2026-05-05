@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { GameInfo } from '@/lib/types';
+import { GoogleGenAI } from '@google/genai';
 
 interface TerminalProps {
   currentGame: GameInfo;
@@ -33,35 +34,45 @@ export function Terminal({ currentGame }: TerminalProps) {
     setIsLoading(true);
 
     try {
-      const res = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          message: userMessage,
-          gameContext: {
-            gameName: currentGame.name,
-            gameLogicSnippet: currentGame.snippet,
-          },
-        }),
+      const ai = new GoogleGenAI({ apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY });
+      const systemInstruction = `You are a helpful, retro-themed AI arcade assistant. 
+You are currently helping a player with the game: ${currentGame.name}.
+Keep your responses concise, retro-flavored, and informative about game logic, code, or mechanics.
+Use 8-bit styling in your speech (e.g., greet with 'BZZT', 'Greetings Player 1', etc).
+Here is the current context of the game logic the user is playing:
+${currentGame.snippet}`;
+
+      const response = await ai.models.generateContent({
+        model: 'gemini-2.5-flash',
+        contents: userMessage,
+        config: {
+          systemInstruction,
+          temperature: 0.7,
+        },
       });
 
-      const data = await res.json();
-      if (res.ok) {
-        setMessages((prev) => [...prev, { role: 'ai', text: data.reply }]);
+      const replyText = response.text;
+      if (replyText) {
+        setMessages((prev) => [...prev, { role: 'ai', text: replyText }]);
       } else {
-        setMessages((prev) => [...prev, { role: 'ai', text: `ERROR: ${data.error}` }]);
+        setMessages((prev) => [...prev, { role: 'ai', text: 'ERROR: EMPTY RESPONSE FROM AI.' }]);
       }
-    } catch {
-      setMessages((prev) => [...prev, { role: 'ai', text: 'ERROR: COMMUNICATION LINK BROKEN.' }]);
+    } catch (error: any) {
+      console.error('Chat API Error:', error);
+      let errorMsg = error?.message || 'Server error';
+      if (errorMsg.includes('API key not valid')) {
+        errorMsg = 'API key not valid. Please check your AI Studio Secrets panel.';
+      }
+      setMessages((prev) => [...prev, { role: 'ai', text: `ERROR: ${errorMsg}` }]);
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <aside className="flex flex-col gap-4 h-full w-full">
+    <aside className="flex flex-col gap-4 h-full w-full min-h-0">
       {/* Code/Logic Panel */}
-      <div className="flex-1 border-4 border-[#333] bg-black p-4 flex flex-col overflow-hidden">
+      <div className="hidden lg:flex lg:flex-1 border-4 border-[#333] bg-black p-4 flex-col overflow-hidden min-h-0">
         <header className="flex justify-between items-center mb-2 border-b-2 border-[#333] pb-1 text-[10px] uppercase opacity-70 text-[#4af626]">
           <span>System: /code/explorer</span>
           <span className="animate-pulse">● ONLINE</span>
@@ -78,7 +89,7 @@ export function Terminal({ currentGame }: TerminalProps) {
       </div>
 
       {/* AI Chat Panel */}
-      <div className="h-[50%] md:h-[300px] border-4 border-[#333] bg-black p-4 flex flex-col">
+      <div className="flex-1 lg:h-[350px] lg:flex-none border-4 border-[#333] bg-black p-4 flex flex-col min-h-[300px] lg:min-h-0">
         <div className="flex-1 text-[11px] overflow-y-auto space-y-3 mb-2 pr-2">
           {messages.map((msg, i) => (
             <div key={i} className={`flex gap-2 ${msg.role === 'ai' ? 'bg-[#1a1a1a] p-2 border-l-2 border-[#4af626]' : ''}`}>
