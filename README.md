@@ -44,7 +44,7 @@ ArcadeAI is a split-screen Next.js playground that mashes up classic 8-bit web g
 
 ---
 
-# 🇮🇩 ArcadeAIUntuk WIR Tercintaia)
+# 🇮🇩 ArcadeAI (Untuk WIR Tercintaia)
 
 **Mainkan game klasiknya. Ngobrol sama AI-nya. Pelajari kodenya.**
 
