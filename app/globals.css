@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --font-arcade: var(--font-press-start), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --color-retro-bg: #1e1e1e;
+  --color-retro-green: #4af626;
+  --color-retro-amber: #ffb000;
+}
+
+@utility retro-border {
+  border-width: 4px;
+  border-color: var(--color-retro-green);
+  border-style: solid;
+  box-shadow: 2px 2px 0px rgba(74, 246, 38, 0.4), inset 2px 2px 0px rgba(74, 246, 38, 0.2);
+}
+
+@utility text-retro-glow {
+  text-shadow: 0 0 5px rgba(74, 246, 38, 0.5);
+}
