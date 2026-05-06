@@ -59,18 +59,23 @@ export function Arcade({ currentGame, onGameChange, children, onButtonDown, onBu
       {/* Physical Controls Area */}
       <section className="bg-[#111] border-t-4 border-[#444] p-4 md:p-6 flex justify-between items-center relative shrink-0 z-20">
          {/* D-Pad */}
-        <div className="grid grid-cols-3 gap-1">
-          <div />
-          <ControllerButton id="up" onDown={onButtonDown} onUp={onButtonUp}><ChevronUp size={24} className="md:w-8 md:h-8" /></ControllerButton>
-          <div />
-          <ControllerButton id="left" onDown={onButtonDown} onUp={onButtonUp}><ChevronLeft size={24} className="md:w-8 md:h-8" /></ControllerButton>
-          <div className="bg-[#333] rounded-sm flex items-center justify-center">
-            <div className="w-4 h-4 bg-[#222] rounded-full shadow-inner" />
+        <div className="flex flex-col items-center">
+          <div className="grid grid-cols-3 gap-1">
+            <div />
+            <ControllerButton id="up" onDown={onButtonDown} onUp={onButtonUp}><ChevronUp size={24} className="md:w-8 md:h-8" /></ControllerButton>
+            <div />
+            <ControllerButton id="left" onDown={onButtonDown} onUp={onButtonUp}><ChevronLeft size={24} className="md:w-8 md:h-8" /></ControllerButton>
+            <div className="bg-[#333] rounded-sm flex items-center justify-center">
+              <div className="w-4 h-4 bg-[#222] rounded-full shadow-inner" />
+            </div>
+            <ControllerButton id="right" onDown={onButtonDown} onUp={onButtonUp}><ChevronRight size={24} className="md:w-8 md:h-8" /></ControllerButton>
+            <div />
+            <ControllerButton id="down" onDown={onButtonDown} onUp={onButtonUp}><ChevronDown size={24} className="md:w-8 md:h-8" /></ControllerButton>
+            <div />
           </div>
-          <ControllerButton id="right" onDown={onButtonDown} onUp={onButtonUp}><ChevronRight size={24} className="md:w-8 md:h-8" /></ControllerButton>
-          <div />
-          <ControllerButton id="down" onDown={onButtonDown} onUp={onButtonUp}><ChevronDown size={24} className="md:w-8 md:h-8" /></ControllerButton>
-          <div />
+          <span className="text-[10px] hidden sm:block uppercase mt-3 opacity-50 text-[#4af626] tracking-widest text-center">
+            [WASD / ARROWS]
+          </span>
         </div>
 
          {/* Logo / Brand */}
@@ -80,7 +85,7 @@ export function Arcade({ currentGame, onGameChange, children, onButtonDown, onBu
          </div>
 
          {/* Action Buttons */}
-         <div className="flex gap-4 md:gap-8">
+         <div className="flex gap-4 md:gap-8 items-start">
            <div className="text-center">
               <button
                 onPointerDown={(e) => { e.preventDefault(); onButtonDown('b'); }}
@@ -91,6 +96,7 @@ export function Arcade({ currentGame, onGameChange, children, onButtonDown, onBu
                 <span className="text-white font-black text-lg md:text-xl font-sans">B</span>
               </button>
               <span className="text-[10px] uppercase mt-2 block opacity-50 text-[#4af626]">ACTION</span>
+              <span className="text-[9px] hidden sm:block opacity-40 text-[#4af626] mt-1">[SPACE / Z]</span>
            </div>
            <div className="text-center">
               <button
@@ -102,6 +108,7 @@ export function Arcade({ currentGame, onGameChange, children, onButtonDown, onBu
                 <span className="text-black font-black text-lg md:text-xl font-sans">A</span>
               </button>
               <span className="text-[10px] uppercase mt-2 block opacity-50 text-[#4af626]">START</span>
+              <span className="text-[9px] hidden sm:block opacity-40 text-[#4af626] mt-1">[ENTER / X]</span>
            </div>
          </div>
       </section>

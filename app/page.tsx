@@ -41,7 +41,7 @@ export default function Home() {
     <div className="flex flex-col lg:flex-row min-h-[100dvh] lg:h-screen w-full bg-[#0d0d0d] font-mono lg:p-4 lg:gap-4 lg:overflow-hidden relative">
       
       {/* Terminal Panel - Mobile bottom, Desktop left */}
-      <div className="order-2 lg:order-1 w-full lg:w-[360px] lg:flex-none flex flex-col p-4 lg:p-0 gap-4 min-h-[400px] lg:h-full lg:min-h-0">
+      <div className="order-2 lg:order-1 w-full lg:w-[450px] xl:w-[500px] lg:flex-none flex flex-col p-4 lg:p-0 gap-4 min-h-[400px] lg:h-full lg:min-h-0">
         <Terminal currentGame={GAMES[currentGameId]} />
       </div>
 

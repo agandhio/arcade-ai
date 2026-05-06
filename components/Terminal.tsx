@@ -72,7 +72,7 @@ ${currentGame.snippet}`;
   return (
     <aside className="flex flex-col gap-4 h-full w-full min-h-0">
       {/* Code/Logic Panel */}
-      <div className="hidden lg:flex lg:flex-1 border-4 border-[#333] bg-black p-4 flex-col overflow-hidden min-h-0">
+      <div className="hidden lg:flex lg:flex-none lg:h-[250px] xl:h-[300px] border-4 border-[#333] bg-black p-4 flex-col overflow-hidden min-h-0">
         <header className="flex justify-between items-center mb-2 border-b-2 border-[#333] pb-1 text-[10px] uppercase opacity-70 text-[#4af626]">
           <span>System: /code/explorer</span>
           <span className="animate-pulse">● ONLINE</span>
@@ -89,7 +89,7 @@ ${currentGame.snippet}`;
       </div>
 
       {/* AI Chat Panel */}
-      <div className="flex-1 lg:h-[350px] lg:flex-none border-4 border-[#333] bg-black p-4 flex flex-col min-h-[300px] lg:min-h-0">
+      <div className="flex-1 border-4 border-[#333] bg-black p-4 flex flex-col min-h-[300px] lg:min-h-0">
         <div className="flex-1 text-[11px] overflow-y-auto space-y-3 mb-2 pr-2">
           {messages.map((msg, i) => (
             <div key={i} className={`flex gap-2 ${msg.role === 'ai' ? 'bg-[#1a1a1a] p-2 border-l-2 border-[#4af626]' : ''}`}>
