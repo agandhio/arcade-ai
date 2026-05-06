@@ -1,5 +1,5 @@
 
-# 👾 ArcadeAI (For Bule :D)
+# 👾 ArcadeAI (For Bule :D) --- Big Shoutout to HACKTIV8 coaches that enables me to utilize Gemini AI SDK for this project
 
 **Play the classics. Chat with the machine. Learn the code.**
 
@@ -18,33 +18,86 @@ ArcadeAI is a split-screen Next.js playground that mashes up classic 8-bit web g
 * **AI Integration:** Gemini Model via Google Gen AI SDK
 * **Backend:** Next.js Serverless Routes for secure API calls
 
-## 💻 Getting Started
+## 🛠️ Local Setup Guide
 
-1. **Clone the repo**
-   ```bash
-   git clone [https://github.com/yourusername/arcade-ai.git](https://github.com/yourusername/arcade-ai.git)
-   cd arcade-ai
-   ```
-
-2. **Set up your environment**
-   Copy the example env file and add your Gemini API key.
-   ```bash
-   cp .env.example .env.local
-
-```
-   *Note: Never commit your `.env.local` to GitHub! That what my Hacktiv8 mentor said haha*
-
-3. **Install dependencies and run**
-   ```bash
-   npm install
-   npm run dev
-
-```
-   Open [http://localhost:3000](http://localhost:3000) in your browser to start the terminal.
+Follow these step-by-step instructions to get **ArcadeAI** running on your local machine.
 
 ---
 
-# 🇮🇩 ArcadeAI (Untuk WIR Tercintaia)
+## 📋 Prerequisites
+
+Before you begin, ensure you have the following installed:
+*   **Node.js** (Version 18.0 or higher)
+*   **Package Manager:** npm (included with Node), [Yarn](https://yarnpkg.com/), or [pnpm](https://pnpm.io/).
+
+---
+
+## 1️⃣ Step 1: Clone the Repository
+
+Clone the project from GitHub to your local machine:
+```bash
+git clone [https://github.com/agandhio/arcade-ai.git](https://github.com/agandhio/arcade-ai.git)
+cd arcade-ai
+```
+
+---
+
+## 2️⃣ Step 2: Install Dependencies
+
+Install the required packages using your preferred manager:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+---
+
+## 3️⃣ Step 3: Set Up Environment Variables
+
+ArcadeAI uses the **Google Gemini API** via the **Google Gen AI SDK**. You will need an API key to enable the AI Code Mentor.
+
+1.  Get your free API key at [Google AI Studio](https://aistudio.google.com/app/apikey).
+2.  In the root directory of the project, create a file named `.env.local`.
+3.  Add your key to the file using the following variable name:
+```env
+NEXT_PUBLIC_GEMINI_API_KEY=your_actual_api_key_here
+```
+
+> **Note:** `.env.local` is listed in your `.gitignore` to ensure your secret keys are never pushed to GitHub.
+
+---
+
+## 4️⃣ Step 4: Run the Development Server
+
+Start the application in development mode:
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
+
+---
+
+## 5️⃣ Step 5: Access the Arcade
+
+Open your browser and navigate to:
+**[http://localhost:3000](http://localhost:3000)**
+
+You should now see the terminal and arcade interface. 
+
+### 💡 Troubleshooting
+*   **AI not responding?** Ensure your API key in `.env.local` is correct and that you have restarted the server after saving the file.
+*   **Port already in use?** If port 3000 is occupied, Next.js will automatically try 3001. Check your terminal output for the correct URL.
+
+---
+
+# 🇮🇩 ArcadeAI (Untuk WIR Tercinta) --- Thanks berat untuk mas-mbak coach HACKTIV8 yang sudah bantu saya memahami Gemini AI SDK agar bisa diimplementasikan di proyek ini :D
 
 **Mainkan game klasiknya. Ngobrol sama AI-nya. Pelajari kodenya.**
 
@@ -65,25 +118,77 @@ ArcadeAI adalah sebuah *playground* Next.js *split-screen* yang menggabungkan ga
 
 ## 💻 Cara Install & Menjalankan di Lokal
 
-1. **Clone repository ini**
-   ```bash
-   git clone [https://github.com/username-kamu/arcade-ai.git](https://github.com/username-kamu/arcade-ai.git)
-   cd arcade-ai
+Ikuti langkah-langkah di bawah ini untuk menjalankan **ArcadeAI** di komputer lokal kamu.
 
+---
+
+## 📋 Prasyarat
+
+Sebelum memulai, pastikan kamu sudah menginstal hal-hal berikut:
+*   **Node.js** (Versi 18.0 atau lebih tinggi).
+*   **Package Manager:** npm (bawaan Node.js), [Yarn](https://yarnpkg.com/), atau [pnpm](https://pnpm.io/).
+
+---
+
+## 1️⃣ Langkah 1: Clone Repository
+
+Clone project ini dari GitHub ke komputer lokal kamu:
+```bash
+git clone [https://github.com/agandhio/arcade-ai.git](https://github.com/agandhio/arcade-ai.git)
+cd arcade-ai
 ```
 
-2. **Setup environment variables**
-   Copy file example env dan masukkan API key Gemini Anda.
-   ```bash
-   cp .env.example .env.local
+---
 
-```
-   *Catatan: Jangan pernah commit file `.env.local` ke GitHub! Kata coach Hacktiv8 sih gitu wkwk*
+## 2️⃣ Langkah 2: Install Dependencies
 
- 3. **Install module & jalankan server**
-   ```bash
-   npm install
-   npm run dev
-   
+Install semua package yang dibutuhkan menggunakan package manager pilihan kamu:
+
+```bash
+npm install
+# atau
+yarn install
+# atau
+pnpm install
 ```
-   Buka [http://localhost:3000](http://localhost:3000) di browser untuk memulai terminal.
+
+---
+
+## 3️⃣ Langkah 3: Konfigurasi Environment Variables
+
+ArcadeAI menggunakan **Google Gemini API** melalui **Google Gen AI SDK**. Kamu butuh API key agar fitur AI Code Mentor bisa berfungsi.
+
+1.  Dapatkan API key gratis di [Google AI Studio](https://aistudio.google.com/app/apikey).
+2.  Di root directory project, buat file baru bernama `.env.local`.
+3.  Tambahkan API key kamu ke dalam file tersebut dengan format berikut:
+```env
+NEXT_PUBLIC_GEMINI_API_KEY=isi_api_key_kamu_di_sini
+```
+
+> **Catatan:** File `.env.local` sudah otomatis masuk dalam `.gitignore` untuk memastikan API key kamu tidak ter-push ke GitHub.
+
+---
+
+## 4️⃣ Langkah 4: Jalankan Development Server
+
+Jalankan aplikasi dalam mode pengembangan:
+```bash
+npm run dev
+# atau
+yarn dev
+# atau
+pnpm dev
+```
+
+---
+
+## 5️⃣ Langkah 5: Buka Arcade
+
+Buka browser kamu dan akses:
+**[http://localhost:3000](http://localhost:3000)**
+
+Sekarang kamu sudah bisa melihat tampilan terminal dan interface arcade.
+
+### 💡 Troubleshooting
+*   **AI tidak merespon?** Pastikan API key di `.env.local` sudah benar dan pastikan kamu sudah melakukan *restart* server (matikan lalu jalankan kembali `npm run dev`) setelah menyimpan file `.env.local`.
+*   **Port 3000 sudah terpakai?** Jika port 3000 sedang digunakan aplikasi lain, Next.js otomatis akan mencoba port 3001. Cek keterangan URL yang muncul di terminal kamu.
