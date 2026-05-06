@@ -3,9 +3,9 @@
 
 **Play the classics. Chat with the machine. Learn the code.**
 
-ArcadeAI is a split-screen Next.js playground that mashes up classic 8-bit web games with an integrated AI terminal. The goal is simple: play the games on the right, and t$
+ArcadeAI is a split-screen Next.js playground that mashes up classic 8-bit web games with an integrated AI terminal. The goal is simple: play the games on the right, and talk to the "Diagnostic Daemon" on the left to figure out exactly how the JavaScript Canvas physics and game loops actually work behind the scenes.
 
-> **💡 Background:** This project is my personal approach to implementing the concepts learned in the **Hacktiv8 AI class**. It serves as a hands-on experiment in integrat$ 
+> **💡 Background:** This project is my personal approach to implementing the concepts learned in the **Hacktiv8 AI class**. It serves as a hands-on experiment in integrating LLMs directly into interactive web applications utilizing **Gemini** and the **Google Gen AI SDK**.
 ## 🚀 Features
 * **5 Playable Classics:** Pong, Snake, Tetris, Space Invaders, and Tic-Tac-Toe.
 * **Split-Screen UI:** Retro terminal styling for the code/chat, and a dedicated arcade cabinet view for the games.
@@ -101,14 +101,14 @@ You should now see the terminal and arcade interface.
 
 **Mainkan game klasiknya. Ngobrol sama AI-nya. Pelajari kodenya.**
 
-ArcadeAI adalah sebuah *playground* Next.js *split-screen* yang menggabungkan game web 8-bit klasik dengan terminal AI terintegrasi. Tujuannya sederhana: mainkan game di s$
+ArcadeAI adalah sebuah *playground* Next.js *split-screen* yang menggabungkan game web 8-bit klasik dengan terminal AI terintegrasi. Tujuannya sederhana: mainkan game di sebelah kanan, dan mengobrol dengan "Diagnostic Daemon" di sebelah kiri untuk mengetahui secara persis bagaimana fisika JavaScript Canvas dan *game loop* bekerja di balik layar.
 
-> **💡 Latar Belakang:** Project ini adalah hasil eksperimen dan pendekatan personal saya dalam mengimplementasikan materi dari **kelas AI Hacktiv8**. Project ini berfungs$ 
+> **💡 Latar Belakang:** Project ini adalah hasil eksperimen dan pendekatan personal saya dalam mengimplementasikan materi dari **kelas AI Hacktiv8**. Project ini berfungsi sebagai praktik langsung untuk mengintegrasikan LLM ke dalam aplikasi web interaktif menggunakan **Gemini** dan **Google Gen AI SDK**.
 ## 🚀 Fitur Utama
 * **5 Game Klasik:** Pong, Snake, Tetris, Space Invaders, dan Tic-Tac-Toe.
 * **UI Split-Screen:** Gaya terminal retro untuk kode/obrolan, dan tampilan *arcade* khusus untuk bermain game.
 * **Kontrol Responsif:** Bermain menggunakan keyboard (WASD/Panah) atau D-Pad di layar yang *mobile-friendly*.
-* **AI Code Mentor:** Integrasi LLM *serverless* yang aman, bertindak sebagai *sysadmin* di dalam game yang siap menjelaskan kode dari game apa pun yang sedang Anda mainka$
+* **AI Code Mentor:** Integrasi LLM *serverless* yang aman, bertindak sebagai *sysadmin* di dalam game yang siap menjelaskan kode dari game apa pun yang sedang Anda mainkan.
 
 ## 🛠️ Tech Stack
 * **Framework:** [Next.js](https://nextjs.org/) (App Router)
